@@ -1,12 +1,11 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
 const Map = () => {
-  // Position par défaut (par exemple, Paris)
+  // Position par défaut
   const position = [51.505, -0.09]
   return (
-    <div style={{border: "1px black solid"}} id="map">
 
-    <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
+    <MapContainer center={position} zoom={13} scrollWheelZoom={true}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -17,7 +16,6 @@ const Map = () => {
         </Popup>
       </Marker>
     </MapContainer>
-  </div>
   );
 };
 
