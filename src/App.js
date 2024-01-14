@@ -3,6 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import Map from './components/Map';
 import ModelChat from './components/ModelChat';
+import Summary from './components/Summary';
 import './App.css';
 
 function NavBar() {
@@ -15,6 +16,9 @@ function NavBar() {
         <li>
           <Link to="/map">Map</Link>
         </li>
+        <li>
+          <Link to="/summary">Summary</Link>
+        </li>        
         <li>
           <Link to="/chat">Chat</Link>
         </li>
@@ -32,6 +36,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/map" element={<Map />} />
           <Route path="/chat" element={<ModelChat />} />
+          <Route path="/summary" element={<Summary />} />
         </Route>
       </Routes>
     </div>
