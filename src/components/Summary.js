@@ -21,20 +21,6 @@ const BarGraph = () => {
         fetchData();
     }, []);
 
-    const chartData = {
-        labels: data ? Object.keys(data) : [],
-        datasets: [
-            {
-                label: 'Number of Answers',
-                backgroundColor: 'rgba(75,192,192,0.2)',
-                borderColor: 'rgba(75,192,192,1)',
-                borderWidth: 1,
-                hoverBackgroundColor: 'rgba(75,192,192,0.4)',
-                hoverBorderColor: 'rgba(75,192,192,1)',
-                data: data ? Object.values(data) : [],
-            },
-        ],
-    };
 
     const getChartData = () => {
         console.log('data', data);
@@ -58,16 +44,6 @@ const BarGraph = () => {
         return chartData;
     }
 
-    const chartOptions = {
-        scales: {
-            x: {
-                beginAtZero: true,
-            },
-            y: {
-                beginAtZero: true,
-            },
-        },
-    };
 
     const getChartOptions = () => {
         const chartOptions = {
