@@ -6,6 +6,7 @@ const Home = () => {
         <section>
             <h1>Home</h1>
             <Link to="/map">Go to the Map</Link>
+            <Link to="/chat">Go to the Chat</Link>
         </section>
     )
 }
