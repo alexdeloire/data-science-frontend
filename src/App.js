@@ -5,6 +5,7 @@ import Map from './components/Map';
 import ModelChat from './components/ModelChat';
 import Summary from './components/Summary';
 import './App.css';
+import DashBoard from './components/DashBoard';
 
 function NavBar() {
   return (
@@ -22,6 +23,9 @@ function NavBar() {
         <li>
           <Link to="/chat">Chat</Link>
         </li>
+        <li>
+          <Link to="/dashboard">Dashboard</Link>
+        </li>
       </ul>
     </nav>
   );
@@ -37,6 +41,7 @@ function App() {
           <Route path="/map" element={<Map />} />
           <Route path="/chat" element={<ModelChat />} />
           <Route path="/summary" element={<Summary />} />
+          <Route path="/dashboard" element={<DashBoard />} />
         </Route>
       </Routes>
     </div>
