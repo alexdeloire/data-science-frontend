@@ -7,6 +7,8 @@ import ReputationGraph from './Graph/ReputationGraph';
 import CountNbResponseGraph from './Graph/CountNbResponseGraph';
 import axios from 'axios';
 
+const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:8000';
+
 const DashBoard = () => {
 
  const [selectedYear, setSelectedYear] = useState(2023);
@@ -22,7 +24,7 @@ const DashBoard = () => {
  useEffect(() => {
   const fetchData = async () => {
       try {
-          const response = await axios.get(`http://localhost:8000/count-response/?year=${selectedYear}`);
+          const response = await axios.get(`${BASE_URL}/count-response/?year=${selectedYear}`);
           setCountResponse(response.data.count);
       } catch (error) {
           console.error('Error fetching data:', error);

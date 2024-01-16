@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:8000';
+
 const ModelChat = (props) => {
 
   const dict_url = {
-    "PolyChatA": "http://localhost:8000/predict_sectorPolyChatA/",
-    "PolyChatI": "http://localhost:8000/predict_sectorPolyChatI/",
-    "PolyChatU": "http://localhost:8000/predict_sectorPolyChatU/",
-    "PolyChatR": "http://localhost:8000/predict_sectorPolyChatR/",
+    "PolyChatA": `${BASE_URL}/predict_sectorPolyChatA/`,
+    "PolyChatI": `${BASE_URL}/predict_sectorPolyChatI/`,
+    "PolyChatU": `${BASE_URL}/predict_sectorPolyChatU/`,
+    "PolyChatR": `${BASE_URL}/predict_sectorPolyChatR/`,
   }
 
   const dict_question = {

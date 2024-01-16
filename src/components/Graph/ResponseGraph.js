@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Bar } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 
+const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:8000';
 
 const ResponseGraph = ({year}) => {
     const [data, setData] = useState(null);
@@ -10,7 +11,7 @@ const ResponseGraph = ({year}) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/formations/?year=${year}`);
+                const response = await axios.get(`${BASE_URL}/formations/?year=${year}`);
                 console.log(response.data.formations);
                 setData(response.data.formations);
             } catch (error) {
