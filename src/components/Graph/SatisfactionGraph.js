@@ -2,13 +2,17 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Bar } from 'react-chartjs-2';
 
+
+const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:8000';
 const SatisfactionGraph = ({ year, onDataLoaded }) => {
+
+
     const [data, setData] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/satisfaction/?year=${year}`);
+                const response = await axios.get(`${BASE_URL}/satisfaction/?year=${year}`);
                 setData(response.data.satisfaction);
                 onDataLoaded()
             } catch (error) {

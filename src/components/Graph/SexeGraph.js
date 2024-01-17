@@ -3,12 +3,16 @@ import { Bar } from 'react-chartjs-2';
 import { Pie } from 'react-chartjs-2';
 import axios from 'axios';
 
-const SexeGraph = ({year, onDataLoaded}) => {
+
+const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:8000';
+
+const SexeGraph = ({year,onDataLoaded}) => {
+
  const [data, setData] = useState(null);
  useEffect(() => {
   const fetchData = async () => {
       try {
-          const response = await axios.get(`http://localhost:8000/sexe/?year=${year}`);
+          const response = await axios.get(`${BASE_URL}/sexe/?year=${year}`);
           console.log(response.data.sexe);
           setData(response.data.sexe);
           onDataLoaded()

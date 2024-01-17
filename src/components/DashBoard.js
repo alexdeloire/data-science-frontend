@@ -8,6 +8,8 @@ import CountNbResponseGraph from './Graph/CountNbResponseGraph';
 import axios from 'axios';
 import { CircleLoader } from 'react-spinners';
 
+const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:8000';
+
 const DashBoard = () => {
 
  const [selectedYear, setSelectedYear] = useState(2023);
@@ -45,7 +47,7 @@ const DashBoard = () => {
   console.log('selectedYear', selectedYear);
   const fetchData = async () => {
    try {
-    const response = await axios.get(`http://localhost:8000/count-response/?year=${selectedYear}`);
+    const response = await axios.get(`${BASE_URL}/count-response/?year=${selectedYear}`);
     setCountResponse(response.data.count);
    } catch (error) {
     console.error('Error fetching data:', error);
