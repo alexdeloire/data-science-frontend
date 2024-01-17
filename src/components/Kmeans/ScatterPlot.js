@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { Chart } from 'chart.js/auto';
-import { lab } from 'd3';
 
 const ScatterPlot = ({ clusters }) => {
   const chartRef = useRef(null);
@@ -12,11 +11,6 @@ const ScatterPlot = ({ clusters }) => {
 
     const clusterData = Object.values(clusters).map((cluster) => {
       const color = getRandomColor();
-
-      const data =   [
-        ...cluster.coordinates.map((coord) => ({ x: coord[0], y: coord[1], type: 'coordinates' })),
-        { x: cluster.center[0], y: cluster.center[1], type: 'center' },
-      ]
 
       const dataset = {
         label: cluster.title,

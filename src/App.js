@@ -3,8 +3,7 @@ import { useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import Map from './components/Map';
-import Kmeans from './components/Kmeans';
-import ModelChat from './components/ModelChat';
+import Kmeans from './components/Kmeans/Kmeans';
 import './css/App.css';
 import DashBoard from './components/DashBoard';
 import Chat from './components/Chat';
@@ -13,7 +12,6 @@ function NavBar() {
   const [isNavbarVisible, setNavbarVisibility] = useState(false);
 
   const toggleNavbar = () => {
-    console.log('toggleNavbar');
     setNavbarVisibility(!isNavbarVisible);
   };
 
@@ -23,15 +21,12 @@ function NavBar() {
       <ul>
         <li>
           <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/map">Map</Link>
-        </li>     
+        </li>   
         <li>
           <Link to="/dashboard">Dashboard</Link>
         </li>
         <li>
-          <Link to="/kmeans">Kmeans</Link>
+          <Link to="/kmeans">Classification - Analyse</Link>
         </li>
         <li>
           <Link to="/chat">Chat</Link>

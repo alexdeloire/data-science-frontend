@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ScatterPlot from './ScatterPlot';
+import ClusterDetails from './ClusterDetails';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:8000';
 
@@ -68,10 +69,13 @@ const Kmeans = () => {
         </select>
       </div>
       <div>
-        <h3>{title}</h3>
+        <h2>{title}</h2>
         <div style={{width:"1000px", height:"800px"}}>
-
             <ScatterPlot clusters={clusters} />
+        </div>
+        <div>
+            <ClusterDetails cluster={clusters} title={clusters[0].title} />
+
         </div>
 
    
