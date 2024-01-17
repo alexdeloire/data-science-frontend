@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import Map from './components/Map';
@@ -8,8 +9,16 @@ import './App.css';
 import DashBoard from './components/DashBoard';
 
 function NavBar() {
+  const [isNavbarVisible, setNavbarVisibility] = useState(false);
+
+  const toggleNavbar = () => {
+    console.log('toggleNavbar');
+    setNavbarVisibility(!isNavbarVisible);
+  };
+
   return (
-    <nav>
+  <div>
+    <div className={`navbar ${isNavbarVisible ? 'visible' : 'hidden'}`}>
       <ul>
         <li>
           <Link to="/">Home</Link>
@@ -36,26 +45,33 @@ function NavBar() {
           <Link to="/dashboard">Dashboard</Link>
         </li>
       </ul>
-    </nav>
+    </div>
+    <div className="hamburger" onClick={()=>toggleNavbar()}>
+    ☰
+  </div>
+</div>
   );
 }
 
 function App() {
   return (
-    <div>
+    // eslint-disable-next-line no-undef
+    <div className={`main-container`}>
       <NavBar />
-      <Routes>
-        <Route path="/">
-          <Route index element={<Home />} />
-          <Route path="/map" element={<Map />} />
-          <Route path="/PolyChatA" element={<ModelChat model="PolyChatA" />} />
-          <Route path="/PolyChatI" element={<ModelChat model="PolyChatI" />} />
-          <Route path="/PolyChatU" element={<ModelChat model="PolyChatU" />} />
-          <Route path="/PolyChatR" element={<ModelChat model="PolyChatR" />} />
-          <Route path="/summary" element={<Summary />} />
-          <Route path="/dashboard" element={<DashBoard />} />
-        </Route>
-      </Routes>
+      <div>
+        <Routes>
+          <Route path="/">
+            <Route index element={<Home />} />
+            <Route path="/map" element={<Map />} />
+            <Route path="/PolyChatA" element={<ModelChat model="PolyChatA" />} />
+            <Route path="/PolyChatI" element={<ModelChat model="PolyChatI" />} />
+            <Route path="/PolyChatU" element={<ModelChat model="PolyChatU" />} />
+            <Route path="/PolyChatR" element={<ModelChat model="PolyChatR" />} />
+            <Route path="/summary" element={<Summary />} />
+            <Route path="/dashboard" element={<DashBoard />} />
+          </Route>
+        </Routes>
+      </div>
     </div>
   );
 }

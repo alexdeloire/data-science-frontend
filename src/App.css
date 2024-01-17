@@ -42,3 +42,159 @@
   height: 600px;
   width: 100%;
 }
+
+
+
+div.main-container {
+  margin-left: 250px; /* Assurez-vous que la marge à gauche est égale à la largeur du NavBar pour éviter le chevauchement */
+  padding: 20px; /* Ajoutez du padding pour éviter le chevauchement avec le NavBar */
+  /*background-color: #f4f4f4; /* Couleur de fond */
+}
+
+/*NAVBAR*/
+/* Style de base pour le Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Pour cacher le Navbar au début */
+  width: 250px;
+  height: 100%;
+  background-color:	#1E90FF;
+  padding-top: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease;
+  z-index: 2;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.navbar li {
+  padding: 10px;
+  text-align: center;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white; /* Couleur des liens */
+  font-size: 18px;
+  display: block;
+  transition: color 0.3s ease; /* Animation de transition de couleur */
+}
+
+.navbar a:hover {
+  color: #f0f0f0; /* Couleur des liens au survol */
+}
+
+
+/* Style pour le hamburger */
+.hamburger {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+/* Animation pour le Navbar visible */
+.navbar.visible {
+  left: 0;
+}
+
+.navbar.visible + div.main-container {
+  margin-left: 250px; /* Décalage vers la droite */
+}
+
+
+
+
+
+/*DASHBOARD*/
+
+/* Style pour le wrapper du contenu */
+/* Style pour le wrapper global */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+/* Style pour le wrapper du select */
+.select-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 20px; /* Marge en bas pour espacement */
+}
+
+/* Style pour le label du select */
+#yearSelectLabel {
+  font-size: 16px;
+  margin-bottom: 5px; /* Marge en bas pour espacement */
+}
+
+/* Style pour le select */
+#yearSelect {
+  padding: 8px;
+  font-size: 16px;
+}
+
+/* ... Autres styles restants ... */
+
+
+/* Ajoutez ces styles à votre fichier de styles CSS */
+
+.loading-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.loading-message {
+  margin-top: 20px; /* Espacement entre le message et le loader */
+}
+
+.loader {
+  margin-top: 20px; /* Espacement entre le loader et le reste du contenu */
+}
+
+
+
+
+/* Ajouter ces styles à votre fichier de styles CSS */
+
+.graph-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+
+.graph-item {
+  width: 45%; /* Deux graphes par ligne avec un léger espacement entre eux */
+  margin-bottom: 20px; /* Espacement entre les lignes */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.graph-item:hover {
+  transform: scale(1.05); /* Zoom légèrement au survol */
+}
+
+/* Styles spécifiques à chaque type de graphique (ajustez selon vos besoins) */
+/* Vous pouvez ajouter des styles supplémentaires pour chaque type de graphique si nécessaire */
+.response-graph, .sexe-graph, .satisfaction-graph, .importance-graph, .reputation-graph, .count-nb-response-graph {
+  background-color: #f0f0f0; /* Couleur de fond pour chaque graphique */
+  padding: 15px; /* Espacement interne */
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+
+

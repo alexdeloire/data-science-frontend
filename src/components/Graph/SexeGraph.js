@@ -3,7 +3,7 @@ import { Bar } from 'react-chartjs-2';
 import { Pie } from 'react-chartjs-2';
 import axios from 'axios';
 
-const SexeGraph = ({year}) => {
+const SexeGraph = ({year, onDataLoaded}) => {
  const [data, setData] = useState(null);
  useEffect(() => {
   const fetchData = async () => {
@@ -11,6 +11,7 @@ const SexeGraph = ({year}) => {
           const response = await axios.get(`http://localhost:8000/sexe/?year=${year}`);
           console.log(response.data.sexe);
           setData(response.data.sexe);
+          onDataLoaded()
           
           // Mettez à jour le state ou effectuez d'autres opérations avec les données
       } catch (error) {

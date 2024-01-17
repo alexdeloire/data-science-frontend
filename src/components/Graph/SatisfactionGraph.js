@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Bar } from 'react-chartjs-2';
 
-const SatisfactionGraph = ({ year }) => {
+const SatisfactionGraph = ({ year, onDataLoaded }) => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
@@ -10,6 +10,7 @@ const SatisfactionGraph = ({ year }) => {
             try {
                 const response = await axios.get(`http://localhost:8000/satisfaction/?year=${year}`);
                 setData(response.data.satisfaction);
+                onDataLoaded()
             } catch (error) {
                 console.error('Error fetching data:', error);
             }

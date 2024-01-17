@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Bar } from 'react-chartjs-2';
 import axios from 'axios';
 
-const CountNbResponseGraph = ({ year, question }) => {
+const CountNbResponseGraph = ({ year, question, onDataLoaded }) => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -10,6 +10,7 @@ const CountNbResponseGraph = ({ year, question }) => {
       try {
         const response = await axios.get(`http://localhost:8000/count/?year=${year}&question=${question}`);
         setData(response.data.count);
+        onDataLoaded()
       } catch (error) {
         console.error('Error fetching data:', error);
       }

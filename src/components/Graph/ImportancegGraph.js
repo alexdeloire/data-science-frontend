@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Bar } from 'react-chartjs-2';
 
-const ImportanceGraph = ({ year }) => {
+const ImportanceGraph = ({ year, onDataLoaded }) => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
@@ -10,6 +10,7 @@ const ImportanceGraph = ({ year }) => {
             try {
                 const response = await axios.get(`http://localhost:8000/importance/?year=${year}`);
                 setData(response.data.importance);
+                onDataLoaded()
             } catch (error) {
                 console.error('Error fetching data:', error);
             }

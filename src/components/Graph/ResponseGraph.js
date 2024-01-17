@@ -4,7 +4,7 @@ import { Bar } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 
 
-const ResponseGraph = ({year}) => {
+const ResponseGraph = ({year, onDataLoaded}) => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
@@ -13,6 +13,7 @@ const ResponseGraph = ({year}) => {
                 const response = await axios.get(`http://localhost:8000/formations/?year=${year}`);
                 console.log(response.data.formations);
                 setData(response.data.formations);
+                onDataLoaded()
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
