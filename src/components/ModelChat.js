@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import '../css/Chat.css';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:8000';
 
@@ -51,24 +52,26 @@ const ModelChat = (props) => {
   };
 
   return (
-    <div>
-      <div style={{ minHeight: '200px', border: '1px solid #ccc', padding: '10px', marginBottom: '10px' }}>
-        {messages.map((msg, index) => (
-          <div key={index} style={{ marginBottom: '5px', color: msg.type === 'user' ? 'blue' : 'green' }}>
-            {msg.text}
-          </div>
-        ))}
+    <div class="chat-container">
+  <div class="chat-box">
+    {messages.map((msg, index) => (
+      <div key={index} class={`message ${msg.type === 'user' ? 'user-message' : 'bot-message'}`}>
+        {msg.text}
       </div>
-      <div>
-        <input
-          type="text"
-          value={inputMessage}
-          onChange={handleInputChange}
-          placeholder="Type your message..."
-        />
-        <button onClick={handleSendMessage}>Send</button>
-      </div>
-    </div>
+    ))}
+  </div>
+  <div class="input-container">
+    <input
+      class="input-message"
+      type="text"
+      value={inputMessage}
+      onChange={handleInputChange}
+      placeholder="Type your message..."
+    />
+    <button class="send-button" onClick={handleSendMessage}>Send</button>
+  </div>
+</div>
+
   );
 };
 

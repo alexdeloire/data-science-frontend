@@ -5,9 +5,9 @@ import Home from './components/Home';
 import Map from './components/Map';
 import Kmeans from './components/Kmeans';
 import ModelChat from './components/ModelChat';
-import Summary from './components/Summary';
-import './App.css';
+import './css/App.css';
 import DashBoard from './components/DashBoard';
+import Chat from './components/Chat';
 
 function NavBar() {
   const [isNavbarVisible, setNavbarVisibility] = useState(false);
@@ -26,10 +26,7 @@ function NavBar() {
         </li>
         <li>
           <Link to="/map">Map</Link>
-        </li>
-        <li>
-          <Link to="/summary">Summary</Link>
-        </li>        
+        </li>     
         <li>
           <Link to="/PolyChatA">PolyChatA</Link>
         </li>
@@ -47,6 +44,9 @@ function NavBar() {
         </li>
         <li>
           <Link to="/kmeans">Kmeans</Link>
+        </li>
+        <li>
+          <Link to="/chat">Chat</Link>
         </li>
       </ul>
     </div>
@@ -72,8 +72,8 @@ function App() {
             <Route path="/PolyChatI" element={<ModelChat model="PolyChatI" />} />
             <Route path="/PolyChatU" element={<ModelChat model="PolyChatU" />} />
             <Route path="/PolyChatR" element={<ModelChat model="PolyChatR" />} />
-            <Route path="/summary" element={<Summary />} />
             <Route path="/dashboard" element={<DashBoard />} />
+            <Route path="/chat" element={<Chat />} />
           </Route>
         </Routes>
       </div>

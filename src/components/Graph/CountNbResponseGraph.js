@@ -28,8 +28,15 @@ const CountNbResponseGraph = ({ year, question, onDataLoaded }) => {
   }
 
   // Préparez les données pour le graphique Bar
+  let labels = Object.keys(data);
+  labels = labels.map((formation) => {
+   const match = formation.match(/\((.*?)\)/);
+   return match ? match[1] : formation;
+ });
+
+
   const barData = {
-    labels: Object.keys(data),
+    labels: labels,
     datasets: [
       {
         label: 'True',

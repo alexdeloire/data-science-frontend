@@ -1,0 +1,84 @@
+/*DASHBOARD*/
+
+/* Style pour le wrapper du contenu */
+/* Style pour le wrapper global */
+.wrapper {
+ display: flex;
+ flex-direction: column;
+ padding: 20px;
+}
+
+/* Style pour le wrapper du select */
+.select-wrapper {
+ display: flex;
+ flex-direction: column;
+ align-items: flex-end;
+}
+
+/* Style pour le label du select */
+#yearSelectLabel {
+ font-size: 16px;
+ margin-bottom: 5px; /* Marge en bas pour espacement */
+}
+
+/* Style pour le select */
+#yearSelect {
+ padding: 8px;
+ font-size: 16px;
+}
+
+/* ... Autres styles restants ... */
+
+
+/* Ajoutez ces styles à votre fichier de styles CSS */
+
+.loading-container {
+ position: fixed;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ text-align: center;
+}
+
+.loading-message {
+ margin-top: 20px; /* Espacement entre le message et le loader */
+}
+
+.loader {
+ margin-top: 20px; /* Espacement entre le loader et le reste du contenu */
+}
+
+
+
+
+/* Ajouter ces styles à votre fichier de styles CSS */
+
+.graph-container {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+ margin-top: 5%;
+}
+
+.graph-item {
+ width: 45%; /* Deux graphes par ligne avec un léger espacement entre eux */
+ margin-bottom: 20px; /* Espacement entre les lignes */
+ cursor: pointer;
+ transition: transform 0.3s ease;
+}
+
+.graph-item:hover {
+ transform: scale(1.05); /* Zoom légèrement au survol */
+}
+
+/* Styles spécifiques à chaque type de graphique (ajustez selon vos besoins) */
+/* Vous pouvez ajouter des styles supplémentaires pour chaque type de graphique si nécessaire */
+.response-graph, .sexe-graph, .satisfaction-graph, .importance-graph, .reputation-graph, .count-nb-response-graph {
+ background-color: #f0f0f0; /* Couleur de fond pour chaque graphique */
+ padding: 15px; /* Espacement interne */
+ border-radius: 8px; /* Coins arrondis */
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+
+

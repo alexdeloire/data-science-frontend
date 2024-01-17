@@ -1,0 +1,55 @@
+/* Ajoutez ces styles à votre fichier de styles CSS */
+
+.chat-container {
+ min-width: 100%;
+ min-height: 100%;
+ margin: 0 auto;
+ font-family: 'Arial', sans-serif;
+}
+
+.chat-box {
+ min-height: 250px;
+ border: 1px solid #ccc;
+ padding: 10px;
+ margin-bottom: 10px;
+ overflow-y: auto; /* Ajoutez une barre de défilement si nécessaire */
+}
+
+.message {
+ margin-bottom: 5px;
+ padding: 8px;
+ border-radius: 8px;
+}
+
+.user-message {
+ color: #3498db; /* Bleu pour les messages de l'utilisateur */
+ background-color: #ecf0f1; /* Fond gris clair */
+}
+
+.bot-message {
+ color: #2ecc71; /* Vert pour les messages du bot */
+ background-color: #e8f8ec; /* Fond vert clair */
+}
+
+.input-container {
+ display: flex;
+}
+
+.input-message {
+ flex: 1;
+ padding: 8px;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+}
+
+.send-button {
+ background-color: #3498db;
+ color: #fff;
+ border: none;
+ padding: 8px;
+ border-radius: 4px;
+ cursor: pointer;
+ margin-left: 8px;
+}
+
+/* Ajoutez des styles pour les états de survol ou de focus au besoin */

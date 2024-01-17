@@ -6,6 +6,7 @@ import ImportanceGraph from './Graph/ImportancegGraph';
 import ReputationGraph from './Graph/ReputationGraph';
 import CountNbResponseGraph from './Graph/CountNbResponseGraph';
 import axios from 'axios';
+import '../css/DashBoard.css';
 import { CircleLoader } from 'react-spinners';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:8000';

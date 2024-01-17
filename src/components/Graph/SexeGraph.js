@@ -93,7 +93,7 @@ return(
   <h2>Répartition par sexe pour chaque formation</h2>
 
   {chartData.labels && (
-   <div style={{ width:"600px" }}>
+   <div style={{ width:"100%" }}>
         <Bar
           data={chartData}
           options={{
@@ -105,13 +105,6 @@ return(
         />
    </div>
       )}
-{/*
-  <div style={{ display:'flex', flexDirection:"row", flexWrap:"wrap" }}>
-  {renderPieCharts()}
-  </div>
-  */}
-
-
  </div>
 )
 }

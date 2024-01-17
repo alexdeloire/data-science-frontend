@@ -82,7 +82,7 @@ const ReputationGraph = ({ year, onDataLoaded }) => {
     return (
         <div>
             <h2>les elements suivants vous semblent-ils avoir joue un role dans votre recrutement ? - la reputation de la filiere de formation</h2>
-            <div style={{ width:"600px" }}>
+            <div style={{ width:"100%" }}>
             {renderChart()}
             </div>
         </div>
