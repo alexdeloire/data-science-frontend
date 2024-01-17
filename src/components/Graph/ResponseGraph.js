@@ -70,7 +70,7 @@ const ResponseGraph = ({year, onDataLoaded}) => {
 
     return (
         <div>
-            <h2>Nombre de réponses par filière</h2>
+            <h3>Nombre de réponses par filière</h3>
             {data ? (
                    <div style={{ width:"100%" }}>
                 <Bar data={getChartData()} options={getChartOptions()} />

@@ -90,7 +90,7 @@ const chartData = generateChartData();
 
 return(
  <div>
-  <h2>Répartition par sexe pour chaque formation</h2>
+  <h3>Répartition par sexe pour chaque formation</h3>
 
   {chartData.labels && (
    <div style={{ width:"100%" }}>

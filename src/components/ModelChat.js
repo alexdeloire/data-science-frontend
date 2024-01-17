@@ -52,7 +52,7 @@ const ModelChat = (props) => {
   };
 
   return (
-    <div class="chat-container">
+  <div class="chat-container">
   <div class="chat-box">
     {messages.map((msg, index) => (
       <div key={index} class={`message ${msg.type === 'user' ? 'user-message' : 'bot-message'}`}>

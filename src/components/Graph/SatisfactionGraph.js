@@ -82,7 +82,7 @@ const SatisfactionGraph = ({ year, onDataLoaded }) => {
 
     return (
         <div>
-            <h2>Graphique de satisfaction</h2>
+            <h3>Graphique de satisfaction</h3>
             <div style={{ width:"100%" }}>
             {renderChart()}
             </div>

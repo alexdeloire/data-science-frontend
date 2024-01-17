@@ -28,18 +28,6 @@ function NavBar() {
           <Link to="/map">Map</Link>
         </li>     
         <li>
-          <Link to="/PolyChatA">PolyChatA</Link>
-        </li>
-        <li>
-          <Link to="/PolyChatI">PolyChatI</Link>
-        </li>
-        <li>
-          <Link to="/PolyChatU">PolyChatU</Link>
-        </li>
-        <li>
-          <Link to="/PolyChatR">PolyChatR</Link>
-        </li>
-        <li>
           <Link to="/dashboard">Dashboard</Link>
         </li>
         <li>
@@ -68,10 +56,6 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/map" element={<Map />} />
             <Route path="/kmeans" element={<Kmeans />} />
-            <Route path="/PolyChatA" element={<ModelChat model="PolyChatA" />} />
-            <Route path="/PolyChatI" element={<ModelChat model="PolyChatI" />} />
-            <Route path="/PolyChatU" element={<ModelChat model="PolyChatU" />} />
-            <Route path="/PolyChatR" element={<ModelChat model="PolyChatR" />} />
             <Route path="/dashboard" element={<DashBoard />} />
             <Route path="/chat" element={<Chat />} />
           </Route>
