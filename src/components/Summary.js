@@ -11,7 +11,6 @@ const BarGraph = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                console.log(`${BASE_URL}/formations/`)
                 const response = await axios.get(`${BASE_URL}/formations/`);
                 console.log(response.data.formations);
                 setData(response.data.formations);

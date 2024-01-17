@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import Map from './components/Map';
+import Kmeans from './components/Kmeans';
 import ModelChat from './components/ModelChat';
 import Summary from './components/Summary';
 import './App.css';
@@ -44,6 +45,9 @@ function NavBar() {
         <li>
           <Link to="/dashboard">Dashboard</Link>
         </li>
+        <li>
+          <Link to="/kmeans">Kmeans</Link>
+        </li>
       </ul>
     </div>
     <div className="hamburger" onClick={()=>toggleNavbar()}>
@@ -63,6 +67,7 @@ function App() {
           <Route path="/">
             <Route index element={<Home />} />
             <Route path="/map" element={<Map />} />
+            <Route path="/kmeans" element={<Kmeans />} />
             <Route path="/PolyChatA" element={<ModelChat model="PolyChatA" />} />
             <Route path="/PolyChatI" element={<ModelChat model="PolyChatI" />} />
             <Route path="/PolyChatU" element={<ModelChat model="PolyChatU" />} />
