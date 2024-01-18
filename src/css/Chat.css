@@ -1,5 +1,3 @@
-/* Ajoutez ces styles à votre fichier de styles CSS */
-
 .chat-container {
  min-width: 100%;
  min-height: 100%;
@@ -12,7 +10,7 @@
  border: 1px solid #ccc;
  padding: 10px;
  margin-bottom: 10px;
- overflow-y: auto; /* Ajoutez une barre de défilement si nécessaire */
+ overflow-y: auto; 
 }
 
 .message {
@@ -22,8 +20,8 @@
 }
 
 .user-message {
- color: #3b7fc4; /* Bleu pour les messages de l'utilisateur */
- background-color: #ecf0f1; /* Fond gris clair */
+ color: #3b7fc4; 
+ background-color: #ecf0f1; 
 }
 
 .bot-message {

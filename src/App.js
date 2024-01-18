@@ -18,7 +18,7 @@ function NavBar() {
   return (
   <div>
     <div className={`navbar ${isNavbarVisible ? 'visible' : 'hidden'}`}>
-      <ul>
+      <ul className='navbar-link'>
         <li>
           <Link to="/">Home</Link>
         </li>   

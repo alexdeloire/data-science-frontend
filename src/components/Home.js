@@ -3,11 +3,14 @@ import {Link} from "react-router-dom";
 const Home = () => {
 
     return (
-        <section>
-            <h1>Home</h1>
-            <Link to="/map">Go to the Map</Link>
-            <Link to="/chat">Go to the Chat</Link>
-        </section>
+        <div className="home-container">
+            
+            {/*<div className="background-image"></div>
+            <div className="content">
+                <h1 className="main-heading">COUCOU</h1>
+    </div>*/}
+        </div>
+
     )
 }
 
