@@ -90,7 +90,7 @@ const DashBoard = () => {
     </select>
   </div>
 
-  <div className="loading-container" style={{ display: Object.values(loadingStates).some((loading) => loading) === true ? "block" : "none" }}>
+  {/* <div className="loading-container" style={{ display: Object.values(loadingStates).some((loading) => loading) === true ? "block" : "none" }}>
     <h1 className="loading-message">Loading...</h1>
     <CircleLoader
       height="80"
@@ -101,9 +101,9 @@ const DashBoard = () => {
       wrapperClass="loader"
       visible={true}
     />
-  </div>
+  </div> */}
 
-  <div style={{ display: Object.values(loadingStates).some((loading) => loading) === true ? "none" : "block" }}>
+  {/* <div style={{ display: Object.values(loadingStates).some((loading) => loading) === true ? "none" : "block" }}> */}
         <h1>Dashboard pour année {selectedYear}</h1>
        <div>En {selectedYear}, nous avons reçu en tout {countResponse} réponses.</div>
        <div className="graph-container">
@@ -129,7 +129,7 @@ const DashBoard = () => {
           ))}
         </div>
 
-       </div>
+       {/* </div> */}
   </div>
  
  )
