@@ -6,38 +6,55 @@ import '../../css/Kmeans.css';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:8000';
 
+const questions = [
+    ["Quels enseignements vous semblent les plus utiles pour l'exercice de votre métier et votre insertion professionnelle ?", "useful-lessons"],
+    ["Quels enseignements, absents de votre formation, vous auraient été utiles ?", "absent-lessons"],
+    ["Quels conseils pourriez-vous donner aux étudiants actuellement en formation pour bien choisir leur stage de fin d'étude ? Réussir leur insertion professionnelle ?", "advice"],
+]
+
 const Kmeans = () => {
     const [selectedFormation, setSelectedFormation] = useState('All');
     const [clusters, setClusters] = useState(null); 
     const [sizeData, setSizeData] = useState(0);
-    const [title, setTitle] = useState(null);
+    const [questionIndex, setQuestionIndex] = useState(0);
 
     const handleFormationChange = (event) => {
         setSelectedFormation(event.target.value);
-       
+    }
+
+    const fetchClusters = async (index) => {  
+        try {
+            if (index === undefined || index === null) {
+                index = 0;
+            }
+            const questionRoute = questions[index][1];
+            // valeur possible = "ig", "mea", "gba", "mat", "mi", "ste", "all" 
+            const response = await axios.get(`${BASE_URL}/kmeans/${questionRoute}?formation=${selectedFormation}`);
+
+            setClusters(response.data.clusters);
+            setSizeData(response.data["nombre de réponse"])
+            console.log(response.data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
     }
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                let response
-                if (selectedFormation === 'All') {
-                    response = await axios.get(`${BASE_URL}/kmeans/useful-lessons/`); // pour toutes les filieres 
-                }else{
-                    // valeur possible = "ig", "mea", "gba", "mat", "mi", "ste", "all" 
-                    response = await axios.get(`${BASE_URL}/kmeans/useful-lessons?formation=${selectedFormation}`);
-                }
-                setTitle(response.data.question);
-                setClusters(response.data.clusters);
-                setSizeData(response.data["nombre de réponse"])
-                console.log(response.data);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
+        fetchClusters(questionIndex);
+        console.log("question : " + questions[questionIndex][0])
+    }, [selectedFormation, questionIndex]);
 
-        fetchData();
-    }, [selectedFormation]);
+    const handleQuestionChange = (value) => {
+        let newIndex = questionIndex + value;
+        if (newIndex < 0) {
+            newIndex = questions.length - 1;
+        }
+        if (newIndex >= questions.length) {
+            newIndex = 0;
+        }
+        setQuestionIndex(newIndex);
+    }
+
 
     return (
         clusters&&
@@ -47,7 +64,7 @@ const Kmeans = () => {
           Sélectionnez une formation :
         </label>
         <select id="yearSelect" onChange={handleFormationChange} value={selectedFormation}>     
-            <option key="All" value="All">
+            <option key="All" value="all">
             All
             </option>
             <option key="ig" value="ig">
@@ -72,7 +89,13 @@ const Kmeans = () => {
         </select>
       </div>
       <div>
-        <h2>{title}</h2>
+        <h2>{questions[questionIndex][0]}</h2>
+        <button onClick={() => handleQuestionChange(-1)}>
+            Question précédente
+        </button>
+        <button onClick={() => handleQuestionChange(1)}>
+            Question suivante
+        </button>
         <div style={{width:"900px", height:"600px"}}>
             <ScatterPlot clusters={clusters} />
         </div>
