@@ -8,6 +8,7 @@ import CountNbResponseGraph from './Graph/CountNbResponseGraph';
 import axios from 'axios';
 import '../css/DashBoard.css';
 import { CircleLoader } from 'react-spinners';
+import Satisfaction from './Graph/Satisfaction';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:8000';
 
@@ -113,7 +114,7 @@ const DashBoard = () => {
             <SexeGraph year={selectedYear} onDataLoaded={() => handleChildDataLoaded('graph2')} />
           </div>
           <div className="graph-item satisfaction-graph">
-            <SatisfactionGraph year={selectedYear} onDataLoaded={() => handleChildDataLoaded('graph3')} />
+            <Satisfaction selectedYear={selectedYear} onDataLoaded={() => handleChildDataLoaded('graph3')} />
           </div>
           <div className="graph-item importance-graph">
             <ImportanceGraph year={selectedYear} onDataLoaded={() => handleChildDataLoaded('graph4')} />

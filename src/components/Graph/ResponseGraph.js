@@ -45,8 +45,6 @@ const ResponseGraph = ({year, onDataLoaded}) => {
                 },
             ],
         };
-
-        console.log('chartData', chartData);
     
         return chartData;
     }
@@ -64,7 +62,6 @@ const ResponseGraph = ({year, onDataLoaded}) => {
             },
         };
 
-        console.log('chartOptions', chartOptions);
         return chartOptions;
     }
 

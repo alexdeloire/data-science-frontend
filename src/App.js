@@ -7,6 +7,7 @@ import Kmeans from './components/Kmeans/Kmeans';
 import './css/App.css';
 import DashBoard from './components/DashBoard';
 import Chat from './components/Chat';
+import NuageDeMot from './components/NuageDeMot';
 
 function NavBar() {
   const [isNavbarVisible, setNavbarVisibility] = useState(false);
@@ -31,6 +32,9 @@ function NavBar() {
         <li>
           <Link to="/chat">Chat</Link>
         </li>
+        <li>
+          <Link to="/cloud">cloud</Link>
+        </li>
       </ul>
     </div>
     <div className="hamburger" onClick={()=>toggleNavbar()}>
@@ -53,6 +57,7 @@ function App() {
             <Route path="/kmeans" element={<Kmeans />} />
             <Route path="/dashboard" element={<DashBoard />} />
             <Route path="/chat" element={<Chat />} />
+            <Route path="/cloud" element={<NuageDeMot />} />
           </Route>
         </Routes>
       </div>
