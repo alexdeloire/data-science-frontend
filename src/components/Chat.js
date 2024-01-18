@@ -35,6 +35,7 @@ const Chat = () => {
     </select>
   </div>
      <h1>Chat {selectedChat}</h1>
+     <div>Description</div>
      <ModelChat model={selectedChat} />
    </div>
  );

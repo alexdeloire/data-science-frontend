@@ -30,7 +30,7 @@ function NavBar() {
           <Link to="/kmeans">Classification - Analyse</Link>
         </li>
         <li>
-          <Link to="/chat">Chat</Link>
+          <Link to="/chat">Poly-Chat</Link>
         </li>
         <li>
           <Link to="/cloud">cloud</Link>
