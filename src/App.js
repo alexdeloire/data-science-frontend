@@ -29,7 +29,7 @@ function NavBar() {
           <Link to="/kmeans">Classification - Analyse</Link>
         </li>
         <li>
-          <Link to="/chat">Chat</Link>
+          <Link to="/chat">Poly-Chat</Link>
         </li>
       </ul>
     </div>
