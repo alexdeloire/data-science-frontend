@@ -60,10 +60,10 @@ const Kmeans = () => {
             MAT
             </option>
             <option key="mi" value="mi">
-            mi
+            MI
             </option>
             <option key="ste" value="ste">
-            ste
+            STE
             </option>
     
         </select>

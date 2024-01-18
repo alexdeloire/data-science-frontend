@@ -20,10 +20,18 @@ const ScatterPlot = ({ clusters }) => {
         ],
         backgroundColor: color,
         pointStyle: (context) => {
-          return context.dataset.data[context.dataIndex].type === 'center' ? 'rectRounded' : 'circle';
+          return context.dataset.data[context.dataIndex].type === 'center' ? 'crossRot' : 'circle';
         },
         pointRadius: (context) => {
-          return context.dataset.data[context.dataIndex].type === 'center' ? 30 : 2;
+          return context.dataset.data[context.dataIndex].type === 'center' ? 9 : 2;
+        },
+        pointBorderColor: (context) => {
+          // Utilisez une fonction pour définir la couleur du contour du point
+          return context.dataset.data[context.dataIndex].type === 'center' ? color : "transparent";
+        },
+        pointBorderWidth: (context) => {
+          // Utilisez une fonction pour définir la couleur du contour du point
+          return context.dataset.data[context.dataIndex].type === 'center' ? 3 : 0;
         },
       };
 
@@ -83,7 +91,7 @@ const ScatterPlot = ({ clusters }) => {
   };
 
 
-return <canvas ref={chartRef} style={{ width: '700px', height: '700px' }} />;
+return <canvas width="1200" ref={chartRef} style={{ width: '700px', height: '700px' }} />;
 
 };
 
