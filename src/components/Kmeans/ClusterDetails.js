@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const ClusterDetails = ({ cluster, title }) => {
+const ClusterDetails = ({ cluster, title, size }) => {
   const [selectedTitle, setSelectedTitle] = useState(title);
   const [showAllData, setShowAllData] = useState(false);
   console.log("cluster", cluster)
@@ -36,11 +36,9 @@ const ClusterDetails = ({ cluster, title }) => {
 
   }else{
    if(selectedCluster.data.length > 10){
-    console.log("sup 10");
     displayData = selectedCluster.data.slice(0, 10);
 
     }else{
-      console.log("INF 10");
       displayData = selectedCluster.data;
     }
   }
@@ -48,8 +46,8 @@ const ClusterDetails = ({ cluster, title }) => {
   return (
    <div className="wrapper">
      <div className="select-wrapper">
-        <label htmlFor="titleSelect">Sélectionnez un titre :</label>
-        <select id="titleSelect" onChange={handleChange} value={selectedTitle}>
+        <label htmlFor="yearSelect" id="yearSelectLabel">Sélectionnez un titre :</label>
+        <select id="yearSelect" onChange={handleChange} value={selectedTitle}>
           {Object.values(cluster).map((c) => (
             <option key={c.title} value={c.title}>
               {c.title}
@@ -58,19 +56,24 @@ const ClusterDetails = ({ cluster, title }) => {
         </select>
       </div>
 
-      <h2>{selectedCluster.title}</h2>
+      <h2 className="cluster-title">{selectedCluster.title} ({((selectedCluster.taille / size) * 100).toFixed(2)}%)</h2>
       <p>{selectedCluster.description}</p>
 
-      <h3>Les 10 premières données :</h3>
-      <ul>
+      <h3>Aperçu des données</h3>
+      <ul className="data-list">
         {displayData.map((data, index) => (
-          <li key={index}>{data}</li>
+          <li key={index} className="data-item">
+            {data}
+          </li>
         ))}
       </ul>
 
       {!showAllData && selectedCluster.data.length > 10 && (
-        <button onClick={handleShowAllData}>Afficher toutes les données</button>
+        <button className="show-all-button" onClick={handleShowAllData}>
+          Afficher toutes les données
+        </button>
       )}
+
     </div>
   );
 };

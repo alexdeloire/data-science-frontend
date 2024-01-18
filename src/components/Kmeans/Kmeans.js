@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ScatterPlot from './ScatterPlot';
 import ClusterDetails from './ClusterDetails';
+import '../../css/Kmeans.css';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:8000';
 
 const Kmeans = () => {
     const [selectedFormation, setSelectedFormation] = useState('All');
     const [clusters, setClusters] = useState(null); 
+    const [sizeData, setSizeData] = useState(0);
     const [title, setTitle] = useState(null);
 
     const handleFormationChange = (event) => {
@@ -27,6 +29,7 @@ const Kmeans = () => {
                 }
                 setTitle(response.data.question);
                 setClusters(response.data.clusters);
+                setSizeData(response.data["nombre de réponse"])
                 console.log(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -70,11 +73,11 @@ const Kmeans = () => {
       </div>
       <div>
         <h2>{title}</h2>
-        <div style={{width:"1000px", height:"800px"}}>
+        <div style={{width:"900px", height:"600px"}}>
             <ScatterPlot clusters={clusters} />
         </div>
         <div>
-            <ClusterDetails cluster={clusters} title={clusters[0].title} />
+            <ClusterDetails cluster={clusters} title={clusters[0].title} size={sizeData}/>
 
         </div>
 

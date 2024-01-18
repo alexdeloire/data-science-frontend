@@ -59,7 +59,7 @@ div.main-container {
   left: -250px; /* Pour cacher le Navbar au début */
   width: 250px;
   height: 100%;
-  background-color:	#1E90FF;
+  background-color:	#3b7fc4;
   padding-top: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   transition: left 0.3s ease;
