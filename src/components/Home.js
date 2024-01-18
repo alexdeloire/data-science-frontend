@@ -5,7 +5,7 @@ const Home = () => {
 
     return (
         <div className="home-container">
-           <NuageDeMot></NuageDeMot>
+           Bienvenue sur le site du projet de Data Science de l'année 2023-2024.
             
             {/*<div className="background-image"></div>
             <div className="content">

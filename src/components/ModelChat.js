@@ -14,10 +14,10 @@ const ModelChat = (props) => {
   }
 
   const dict_question = {
-    "PolyChatA": "Quel est la filière pour laquelle un cours de INSERT était absent et aurait été utile ?",
-    "PolyChatI": "Quel est la filière pour laquelle le cours de INSERT était inutile ?",
-    "PolyChatU": "Quel est la filière pour laquelle le cours de INSERT était utile ?",
-    "PolyChatR": "Quel est la filière pour laquelle le cours de INSERT devrait être renforcé ou appronfondi ?",
+    "PolyChatA": "Quelle est la filière pour laquelle un cours de INSERT était absent et aurait été utile ?",
+    "PolyChatI": "Quelle est la filière pour laquelle le cours de INSERT était inutile ?",
+    "PolyChatU": "Quelle est la filière pour laquelle le cours de INSERT était utile ?",
+    "PolyChatR": "Quelle est la filière pour laquelle le cours de INSERT devrait être renforcé ou approfondi ?",
   }
 
   const [inputMessage, setInputMessage] = useState('');
