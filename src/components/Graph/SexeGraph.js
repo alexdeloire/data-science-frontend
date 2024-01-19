@@ -26,6 +26,11 @@ const SexeGraph = ({year,onDataLoaded}) => {
   fetchData();
 }, [year]);
 
+  // Vérifiez si les données ont été chargées
+  if (!data) {
+    return <div>Loading data...</div>;
+  }
+
 
 const renderPieCharts = () => {
  if (!data) {
@@ -90,7 +95,7 @@ const chartData = generateChartData();
 
 return(
  <div>
-  <h3>Répartition par sexe pour chaque formation</h3>
+  <h3>Répartition des sexes des répondants pour chaque filière</h3>
 
   {chartData.labels && (
    <div style={{ width:"100%" }}>

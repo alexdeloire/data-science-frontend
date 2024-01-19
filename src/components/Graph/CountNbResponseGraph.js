@@ -24,7 +24,7 @@ const CountNbResponseGraph = ({ year, question, onDataLoaded }) => {
 
   // Vérifiez si les données ont été chargées
   if (!data) {
-    return <div>Loading...</div>;
+    return <div>Loading data...</div>;
   }
 
   // Préparez les données pour le graphique Bar

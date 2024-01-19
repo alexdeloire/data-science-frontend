@@ -23,6 +23,8 @@ const SatisfactionGraph = ({ year, onDataLoaded }) => {
         fetchData();
     }, [year]);
 
+    
+
     const renderChart = () => {
         if (!data) {
             return null;

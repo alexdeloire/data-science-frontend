@@ -7,7 +7,7 @@ import chroma from 'chroma-js';
 const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:8000';
 const Satisfaction = ({selectedYear, onDataLoaded}) => {
   
-  const [data, setData] = useState({});
+  const [data, setData] = useState(null);
   
 
   useEffect(() => {
@@ -53,9 +53,14 @@ const Satisfaction = ({selectedYear, onDataLoaded}) => {
      fetchData()
   }, [selectedYear]);
 
+    // Vérifiez si les données ont été chargées
+    if (!data) {
+      return <div>Loading data...</div>;
+    }
+
   return (
     <div>
-      <h2>Satisfaction par filière</h2>
+      <h3>Satisfaction vis à vis de la formation par filière</h3>
       {data && data.datasets && <Bar data={data} options={{ scales: { x: { stacked: true }, y: { stacked: true } } }} />}
     </div>
   );

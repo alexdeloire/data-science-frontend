@@ -10,7 +10,7 @@ import Chat from './components/Chat';
 import NuageDeMot from './components/NuageDeMot';
 
 function NavBar() {
-  const [isNavbarVisible, setNavbarVisibility] = useState(false);
+  const [isNavbarVisible, setNavbarVisibility] = useState(true);
 
   const toggleNavbar = () => {
     setNavbarVisibility(!isNavbarVisible);

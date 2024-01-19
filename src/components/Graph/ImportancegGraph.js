@@ -23,6 +23,11 @@ const ImportanceGraph = ({ year, onDataLoaded }) => {
         fetchData();
     }, [year]);
 
+    // Vérifiez si les données ont été chargées
+    if (!data) {
+        return <div>Loading data...</div>;
+    }
+
     const renderChart = () => {
         if (!data) {
             return null;
@@ -81,7 +86,8 @@ const ImportanceGraph = ({ year, onDataLoaded }) => {
 
     return (
         <div>
-            <h3>les elements suivants vous semblent-ils avoir joue un role dans votre recrutement ? - la formation</h3>
+            <h3>Répartition des réponses pour la question : Les éléments suivants vous semblent-ils avoir
+joué un rôle dans votre recrutement ? - la formation</h3>
             <div style={{ width:"100%" }}>
             {renderChart()}
             </div>
