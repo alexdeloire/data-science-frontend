@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ReactWordcloud from 'react-wordcloud';
-//import '../css/NuageDeMot.css';
+import "../css/Cloud.css"
 
 
 const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:8000';
@@ -54,11 +54,10 @@ const NuageDeMot = () => {
   };
 
   return (
-    <div className="nuage-de-mot-container">
-      <h2 className="nuage-de-mot-title">Nuage de Mots</h2>
-      <div>
-        <label htmlFor="filiereSelect">Choisir la filière:</label>
-        <select id="filiereSelect" value={selectedFiliere} onChange={handleFiliereChange}>
+    <div className="wrapper">
+      <div className="select-wrapper">
+        <label htmlFor="yearSelect">Choisir la filière:</label>
+        <select id="yearSelect" value={selectedFiliere} onChange={handleFiliereChange}>
           {filieres.map(filiere => (
             <option key={filiere.code} value={filiere.code}>{filiere.name}</option>
           ))}
@@ -67,14 +66,28 @@ const NuageDeMot = () => {
       {loading ? (
         <p>Chargement en cours...</p>
       ) : (
-        <>
-          <div className="nuage-de-mot-cloud">
-            <ReactWordcloud words={Object.entries(data).map(([text, value]) => ({ text, value }))} options={wordcloudOptions} />
-          </div>
-          <div className="nuage-de-mot-cloud">
-            <ReactWordcloud words={Object.entries(data2).map(([text, value]) => ({ text, value }))} options={wordcloudOptions} />
-          </div>
-        </>
+       <div className="wordcloud-container">
+       <div className="nuage-de-mot-cloud">
+         <h3>Quels enseignements vous semblent les plus utiles pour l'exercice de votre métier et votre insertion professionnelle ?</h3>
+         <ReactWordcloud 
+         words={Object.entries(data).map(([text, value]) => ({ text, value }))} 
+         options={{
+          ...wordcloudOptions,
+        }}
+         />
+       </div>
+       <div className="nuage-de-mot-cloud">
+         <h3>Parmi les enseignements fournis par l'école, quels sont ceux qui mériteraient d'être approfondis ou renforcés ?</h3>
+         <ReactWordcloud 
+         words={Object.entries(data2).map(([text, value]) => ({ text, value }))} 
+           options={{
+            ...wordcloudOptions,
+          
+          }}
+         />
+       </div>
+     </div>
+     
       )}
     </div>
   );
