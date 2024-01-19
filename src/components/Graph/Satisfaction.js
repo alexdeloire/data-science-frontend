@@ -24,10 +24,11 @@ const Satisfaction = ({selectedYear, onDataLoaded}) => {
         console.log(result);
 
         if (result && result.res) {
-          const labels = Object.keys(result.res);
+          let labels = Object.keys(result.res);
           const satisfactionLevels = Object.keys(result.res[labels[0]]);
 
-          const colorScale = chroma.scale(['red', 'violet']).colors(satisfactionLevels.length);
+          const colorScale = chroma.scale(['lightcoral', 'thistle']).colors(satisfactionLevels.length);
+
 
           const datasets = satisfactionLevels.map((level, index) => ({
             label: `Note ${level}`,
@@ -36,6 +37,11 @@ const Satisfaction = ({selectedYear, onDataLoaded}) => {
             borderColor: 'rgba(75, 192, 192, 1)',
             borderWidth: 1,
           }));
+
+          labels = labels.map((formation) => {
+           const match = formation.match(/\((.*?)\)/);
+           return match ? match[1] : formation;
+         });
 
           const chartData = {
             labels: labels,
@@ -60,8 +66,10 @@ const Satisfaction = ({selectedYear, onDataLoaded}) => {
 
   return (
     <div>
-      <h3>Satisfaction vis à vis de la formation par filière</h3>
+      <h3>Satisfaction par filière</h3>
+      <div style={{ width:"100%" }}>
       {data && data.datasets && <Bar data={data} options={{ scales: { x: { stacked: true }, y: { stacked: true } } }} />}
+      </div>
     </div>
   );
 };
