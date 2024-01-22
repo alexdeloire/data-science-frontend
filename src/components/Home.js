@@ -20,6 +20,26 @@ const Home = () => {
             <div>
              Ainsi, il est possible que le site soit lent pour le premier chargement (Cold start). Merci d'etre <b>patient</b> !
             </div>
+            <div style= {{marginTop: "20px"}}>
+                Description des onglets:
+            </div>
+            <ul>
+                <li style={{marginTop: "10px"}}>
+                    <b>Dashboard</b> : Graphiques sur l'ensemble des données. Permet de vérifier la cohérence des résultats obtenus.
+                </li>
+                <li style={{marginTop: "10px"}}>
+                    <b>Classification</b> : K-means sur les données pour identifier les clusters.
+                </li>
+                <li style={{marginTop: "10px"}}>
+                    <b>PolyChat</b> : 4 modèles entrainés sur les données textuelles qui répondent à des questions sur les retours sur les enseignements. 
+                </li>
+                <li style={{marginTop: "10px"}}>
+                    <b>Cloud</b> : Nuage de mots des retours textuels des anciens élèves.
+                </li>
+            </ul>
+            <div style= {{marginTop: "20px"}}>
+                <b>Lien de la vidéo de présentation</b>: <a href="https://drive.google.com/drive/folders/1ODPh_CTbQfIZ_Yo1DnuBmgFoEzage9CU?usp=sharing">Lien Vidéo</a>
+            </div>
         </div>
     )
 }
