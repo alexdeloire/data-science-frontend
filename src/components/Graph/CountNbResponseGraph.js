@@ -58,9 +58,12 @@ const CountNbResponseGraph = ({ year, question, onDataLoaded }) => {
     },
   };
 
+  // How to have a bracket in the title? 
+  // Answer: Use the HTML entity for the bracket: &lt; for < and &gt; for >
   return (
     <div>
-      <h3>Question : {question}</h3>
+      <h3>Nombre de réponses pour la question: {question}</h3>
+      <p>&#40;Vrai: la personne a répondu à la question, Faux: la personne n'a pas répondu à la question&#41;</p>
       <Bar data={barData} options={barOptions} />
     </div>
   );
