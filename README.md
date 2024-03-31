@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React AI Data Science Project Frontend
 
-## Available Scripts
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+### **Description**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This is the frontend of the AI Data Science Project. The project is a web application that allows users to interact with various machine learning models that were trained on textual feedback from Polytech's alumni.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+[Installation and Execution](#installation) •
+[Documentation](#documentation) •
+[Contributions](#contributions)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Please read the thourough documentation provided.**
+</div>
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Summary graphs of the data
+- Sentiment analysis
+- K-means clustering
+- Neural networks
+- Word clouds
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Table of Contents
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [Installation](#installation)
+  - [Pre-requisites](#pre-requisites)
+  - [Execution](#execution)
+- [Documentation](#documentation)
+- [Contributions](#contributions)
+  - [Authors](#authors)
+  - [Version control](#version-control)
 
-### `npm run eject`
+# Installation
+<sup>[(Back to top)](#table-of-contents)</sup>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Pre-requisites
+<sup>[(Back to top)](#table-of-contents)</sup>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Have node.js and npm installed on your machine.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Execution
+<sup>[(Back to top)](#table-of-contents)</sup>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Run the following commands in the terminal:
 
-## Learn More
+```bash
+npm install
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Documentation
+<sup>[(Back to top)](#table-of-contents)</sup>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Thourough documentation is provided.
 
-### Code Splitting
+# Contributions
+<sup>[(Back to top)](#table-of-contents)</sup>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Authors
+<sup>[(Back to top)](#table-of-contents)</sup>
 
-### Analyzing the Bundle Size
+- [**Alexandre Deloire**](https://github.com/alexdeloire)
+- [**Remi Jorge**](https://github.com/RemiJorge)
+- [**Jiayi He**](https://github.com/JiayiHE95)
+- [**Charlene Morchipont**](https://github.com/charleneMrcp)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Version control
+<sup>[(Back to top)](#table-of-contents)</sup>
 
-### Making a Progressive Web App
+Git is used for version control.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
